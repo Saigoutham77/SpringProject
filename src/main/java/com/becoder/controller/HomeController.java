@@ -60,7 +60,7 @@ public class HomeController {
 		return "redirect:/loadEmpSave";
 	}
 
-	@PostMapping("/SpringProject/updateEmpDtls")
+	@PostMapping("/updateEmpDtls")
 	public String updateEmp(@ModelAttribute Employee emp, HttpSession session) {
 		// System.out.println(emp);
 
@@ -77,7 +77,7 @@ public class HomeController {
 		return "redirect:/";
 	}
 
-	@GetMapping("/SpringProject/deleteEmp/{id}")
+	@GetMapping("/deleteEmp/{id}")
 	public String loadEmpSave(@PathVariable int id, HttpSession session) {
 		boolean f = empService.deleteEmp(id);
 		if (f) {
