@@ -18,7 +18,7 @@ import com.fasterxml.jackson.annotation.JsonCreator.Mode;
 import jakarta.servlet.http.HttpSession;
 
 @Controller
-@RequestMapping("/emp")
+@RequestMapping("/SpringProject")
 public class HomeController {
 
 	@Autowired
