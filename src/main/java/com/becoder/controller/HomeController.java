@@ -31,12 +31,12 @@ public class HomeController {
 		return "index";
 	}
 
-	@GetMapping("/loadEmpSave")
+	@GetMapping("/SpringProject/loadEmpSave")
 	public String loadEmpSave() {
 		return "emp_save";
 	}
 
-	@GetMapping("/EditEmp/{id}")
+	@GetMapping("/SpringProject/EditEmp/{id}")
 	public String EditEmp(@PathVariable int id, Model m) {
 		// System.out.println(id);
 		Employee emp = empService.getEmpById(id);
@@ -44,7 +44,7 @@ public class HomeController {
 		return "edit_emp";
 	}
 
-	@PostMapping("/saveEmp")
+	@PostMapping("/SpringProject/saveEmp")
 	public String saveEmp(@ModelAttribute Employee emp, HttpSession session) {
 		// System.out.println(emp);
 
@@ -61,7 +61,7 @@ public class HomeController {
 		return "redirect:/loadEmpSave";
 	}
 
-	@PostMapping("/updateEmpDtls")
+	@PostMapping("/SpringProject/updateEmpDtls")
 	public String updateEmp(@ModelAttribute Employee emp, HttpSession session) {
 		// System.out.println(emp);
 
@@ -78,7 +78,7 @@ public class HomeController {
 		return "redirect:/";
 	}
 
-	@GetMapping("/deleteEmp/{id}")
+	@GetMapping("/SpringProject/deleteEmp/{id}")
 	public String loadEmpSave(@PathVariable int id, HttpSession session) {
 		boolean f = empService.deleteEmp(id);
 		if (f) {
