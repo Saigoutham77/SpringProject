@@ -57,7 +57,7 @@ public class HomeController {
 			session.setAttribute("msg", "something wrong on server");
 		}
 
-		return "redirect:/SpringProject/loadEmpSave";
+		return "redirect:/loadEmpSave";
 	}
 
 	@PostMapping("/SpringProject/updateEmpDtls")
