@@ -31,12 +31,12 @@ public class HomeController {
 		return "index";
 	}
 
-	@GetMapping("/SpringProject/loadEmpSave")
+	@GetMapping("/loadEmpSave")
 	public String loadEmpSave() {
 		return "emp_save";
 	}
 
-	@GetMapping("/SpringProject/EditEmp/{id}")
+	@GetMapping("/EditEmp/{id}")
 	public String EditEmp(@PathVariable int id, Model m) {
 		// System.out.println(id);
 		Employee emp = empService.getEmpById(id);
@@ -44,7 +44,7 @@ public class HomeController {
 		return "edit_emp";
 	}
 
-	@PostMapping("/SpringProject/saveEmp")
+	@PostMapping("/saveEmp")
 	public String saveEmp(@ModelAttribute Employee emp, HttpSession session) {
 		// System.out.println(emp);
 
@@ -58,7 +58,7 @@ public class HomeController {
 			session.setAttribute("msg", "something wrong on server");
 		}
 
-		return "redirect:/loadEmpSave";
+		return "redirect:/SpringProject/loadEmpSave";
 	}
 
 	@PostMapping("/SpringProject/updateEmpDtls")
@@ -75,7 +75,7 @@ public class HomeController {
 			session.setAttribute("msg", "something wrong on server");
 		}
 
-		return "redirect:/";
+		return "redirect:/SpringProject/";
 	}
 
 	@GetMapping("/SpringProject/deleteEmp/{id}")
@@ -86,7 +86,7 @@ public class HomeController {
 		} else {
 			session.setAttribute("msg", "something wrong on server");
 		}
-		return "redirect:/";
+		return "redirect:/SpringProject/";
 	}
 
 }
