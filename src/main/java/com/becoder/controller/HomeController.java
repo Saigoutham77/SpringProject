@@ -74,7 +74,7 @@ public class HomeController {
 			session.setAttribute("msg", "something wrong on server");
 		}
 
-		return "redirect:/SpringProject/";
+		return "redirect:/";
 	}
 
 	@GetMapping("/SpringProject/deleteEmp/{id}")
@@ -85,7 +85,7 @@ public class HomeController {
 		} else {
 			session.setAttribute("msg", "something wrong on server");
 		}
-		return "redirect:/SpringProject/";
+		return "redirect:/";
 	}
 
 }
