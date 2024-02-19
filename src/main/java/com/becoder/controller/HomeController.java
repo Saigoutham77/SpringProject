@@ -60,7 +60,7 @@ public class HomeController {
 		return "redirect:/loadEmpSave";
 	}
 
-	@PostMapping("/updateEmpDtls")
+	@PostMapping("/SpringProject/updateEmpDtls")
 	public String updateEmp(@ModelAttribute Employee emp, HttpSession session) {
 		// System.out.println(emp);
 
