@@ -49,7 +49,11 @@ public class HomeController {
 	    }
 
 	@GetMapping("/")
-	public String index(Model m) {
+	public String index(Model m, HttpSession session) {
+	 	if (session.getAttribute("username") == null) {
+			// Redirect to login page if not authenticated
+			return "redirect:/login";
+	    	}
 		List<Employee> list = empService.getAllEmp();
 		m.addAttribute("empList", list);
 		return "index";
