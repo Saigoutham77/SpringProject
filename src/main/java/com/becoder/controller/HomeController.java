@@ -23,6 +23,31 @@ public class HomeController {
 	@Autowired
 	private EmpService empService;
 
+	@GetMapping("/login")
+	    public String loginPage() {
+		return "login";
+	    }
+	
+	    @PostMapping("/login")
+	    public String login(@RequestParam String username, @RequestParam String password, HttpSession session) {
+		// Add authentication logic here
+		// For simplicity, you can check hardcoded credentials
+		if ("nuthan".equals(username) && "nuthan".equals(password)) {
+		    session.setAttribute("username", username);
+		    return "redirect:/";
+		} else {
+		    session.setAttribute("msg", "");
+		    return "redirect:/login";
+		}
+	    }
+	    
+	    @GetMapping("/logout")
+	    public String logout(HttpSession session) {
+		// Invalidate the session
+		session.invalidate();
+		return "redirect:/login";
+	    }
+
 	@GetMapping("/")
 	public String index(Model m) {
 		List<Employee> list = empService.getAllEmp();
